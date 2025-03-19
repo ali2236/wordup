@@ -1,0 +1,2 @@
+21485|1667|apple|apples|A round fruit with firm, white flesh and a green, red, or yellow skin.|dac9c399-bbd2-41d5-8f04-0f1534053a29|1|ˈæpl|ˈæpl
+11193|249|happy|happier,happiest,happiness,happily|Feeling or showing pleasure or satisfaction|9e68f0aa-ffbd-4024-8886-45f42067c4a2|1|ˈhæpi|ˈhæpi
