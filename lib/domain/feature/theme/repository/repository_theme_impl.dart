@@ -23,7 +23,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
   List<AppThemeData> getThemes() => _themes;
 
   @override
-  void setTheme(AppThemeData theme) async{
+  void setTheme(AppThemeData theme) async {
     await _keyValueRepository.put(_key_theme, theme.id);
   }
 }

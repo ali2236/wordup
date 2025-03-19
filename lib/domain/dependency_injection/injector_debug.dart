@@ -34,7 +34,7 @@ class DebugInjector extends GetItInjector {
 
     // Accent
     container.registerSingleton<AccentRepository>(
-      AccentRepositoryImpl(container.get())
+      AccentRepositoryImpl(container.get()),
     );
 
     // Network

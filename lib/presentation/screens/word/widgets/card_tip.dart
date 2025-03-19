@@ -30,7 +30,7 @@ class TipCard extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                PlayPauseButton(playing: false, onTap: (){}),
+                PlayPauseButton(playing: false, onTap: () {}),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
                   child: Image.asset(Assets.iconsFa),
@@ -38,10 +38,7 @@ class TipCard extends StatelessWidget {
               ],
             ),
             SizedBox(height: 12),
-            Text(
-              tip.definition,
-              style: theme.textTheme.bodyMedium,
-            ),
+            Text(tip.definition, style: theme.textTheme.bodyMedium),
             SizedBox(height: 12),
             Expanded(
               child: Column(
@@ -62,9 +59,7 @@ class TipCard extends StatelessWidget {
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.w500,
                         ),
-                        highlightWord: {
-                          word.word: theme.colorScheme.primary,
-                        },
+                        highlightWord: {word.word: theme.colorScheme.primary},
                       ),
                     ),
                   ),

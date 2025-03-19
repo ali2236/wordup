@@ -6,13 +6,12 @@ class KeyValueRepository {
 
   KeyValueRepository(this._dataSource);
 
-  Future<void> put(String key, String value){
+  Future<void> put(String key, String value) {
     return _dataSource.update(KeyValue(key, value));
   }
 
   String? get(String key, [String? defaultValue]) {
-     final kv = _dataSource.get(key);
-     return kv?.value ?? defaultValue;
+    final kv = _dataSource.get(key);
+    return kv?.value ?? defaultValue;
   }
-
 }

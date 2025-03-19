@@ -36,7 +36,7 @@ class WordInfoRepository extends Repository<WordInfo, int, void> {
     yield* Stream.value(wordInfo);
   }
 
-  List<WordSense> getAllWordSenses(Word word, WordResult info){
+  List<WordSense> getAllWordSenses(Word word, WordResult info) {
     return (word.senses + word.phrases).map((s) {
       final tipsRows = s.tp.split("\r\n");
       tipsRows.removeWhere((r) => r.isEmpty);
@@ -63,7 +63,7 @@ class WordInfoRepository extends Repository<WordInfo, int, void> {
     }).toList();
   }
 
-  Future<List<WordComparison>> getAllWordComparisons(Word word) async{
+  Future<List<WordComparison>> getAllWordComparisons(Word word) async {
     return (await Future.wait(
       word.comparisons.map((c) async {
         final comparisonParts = c.split("|");
@@ -71,20 +71,15 @@ class WordInfoRepository extends Repository<WordInfo, int, void> {
         final description = comparisonParts[1];
         final info =
             (await _wordInfoMinimalRepository
-                .getAll(StringQueryFilter(word))
-                .first)
+                    .getAll(StringQueryFilter(word))
+                    .first)
                 .where(
                   (w) =>
-              w.word.toLowerCase().trim() ==
-                  word.toLowerCase().trim(),
-            )
+                      w.word.toLowerCase().trim() == word.toLowerCase().trim(),
+                )
                 .firstOrNull;
         if (info == null) return null;
-        return WordComparison(
-          word: word,
-          description: description,
-          info: info,
-        );
+        return WordComparison(word: word, description: description, info: info);
       }),
     )).whereType<WordComparison>().toList();
   }

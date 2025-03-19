@@ -12,17 +12,13 @@ class WordAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final vm = context.watch<WordPageViewModel>();
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 16,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Row(
         children: [
           ColoredCircleIconButton(
             icon: Icon(Icons.close_rounded, size: 32),
             onTap: () => Navigator.of(context).pop(),
-            backgroundColor:
-            Theme.of(context).colorScheme.onInverseSurface,
+            backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
           ),
           Spacer(),
           WordPopupMenuButton(word: vm.word),

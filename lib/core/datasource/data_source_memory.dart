@@ -2,8 +2,8 @@ import 'dart:collection';
 import '../model/model.dart';
 import 'data_source.dart';
 
-class MemoryDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Filter> {
-
+class MemoryDataSource<M extends Model, ID, Filter>
+    extends DataSource<M, ID, Filter> {
   final _data = <M>[];
 
   @override
@@ -13,7 +13,7 @@ class MemoryDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Fi
 
   @override
   Future<void> delete(ID id) async {
-    _data.removeWhere((it)=>it.id == id);
+    _data.removeWhere((it) => it.id == id);
   }
 
   @override
@@ -32,5 +32,4 @@ class MemoryDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Fi
   Stream<List<M>> getAll(Filter? filter) {
     return Stream.value(UnmodifiableListView(_data));
   }
-
 }

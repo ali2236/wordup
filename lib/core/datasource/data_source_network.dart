@@ -2,7 +2,8 @@ import 'package:wordup/core/core.dart';
 import 'package:wordup/core/network/network_client.dart';
 import 'data_source.dart';
 
-abstract class NetworkDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Filter>{
+abstract class NetworkDataSource<M extends Model, ID, Filter>
+    extends DataSource<M, ID, Filter> {
   final NetworkClient client;
 
   NetworkDataSource(this.client);
@@ -31,5 +32,4 @@ abstract class NetworkDataSource<M extends Model, ID, Filter> extends DataSource
   Future<void> update(M model) {
     throw UnimplementedError();
   }
-
 }

@@ -7,5 +7,4 @@ class Assets {
   static const String iconsKnowledgeMap = 'assets/icons/knowledge_map.svg';
   static const String iconsLightBulb = 'assets/icons/light_bulb.png';
   static const String iconsSpeaker = 'assets/icons/speaker.svg';
-
 }

@@ -9,9 +9,13 @@ class WordResultListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(word.word, style: TextStyle(fontWeight: FontWeight.bold),),
-      subtitle: word.otherForms.isNotEmpty ? Text(word.otherForms.join(', ')) : null,
-      trailing: Text('#${word.rank}', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),),
+      title: Text(word.word, style: TextStyle(fontWeight: FontWeight.bold)),
+      subtitle:
+          word.otherForms.isNotEmpty ? Text(word.otherForms.join(', ')) : null,
+      trailing: Text(
+        '#${word.rank}',
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+      ),
       onTap: onTap,
     );
   }

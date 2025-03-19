@@ -32,7 +32,7 @@ class BaseTheme extends AppThemeData {
       ),
       popupMenuTheme: PopupMenuThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        color: Color(0xffd9dded)
+        color: Color(0xffd9dded),
       ),
       inputDecorationTheme: InputDecorationTheme(
         outlineBorder: BorderSide.none,

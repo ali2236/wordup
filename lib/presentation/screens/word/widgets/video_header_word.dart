@@ -16,11 +16,9 @@ class WordHeaderVideo extends StatelessWidget {
         height: vm.imageHeight,
         child: CachedVideoPlayer(
           videoUrl:
-          imageCDN
-              .resolve(
-            '/video/${vm.word.primarySenseId}.mp4',
-          )
-              .toString(),
+              imageCDN
+                  .resolve('/video/${vm.word.primarySenseId}.mp4')
+                  .toString(),
           hasVideo: () {
             vm.hasVideo = true;
           },

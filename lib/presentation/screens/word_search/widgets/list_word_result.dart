@@ -22,7 +22,7 @@ class WordResultList extends StatelessWidget {
           return WordResultListTile(word, onTap: () => onTap(word));
         },
         separatorBuilder: (BuildContext context, int index) {
-          return Divider(height: 0, thickness: 0.4,);
+          return Divider(height: 0, thickness: 0.4);
         },
       );
     }

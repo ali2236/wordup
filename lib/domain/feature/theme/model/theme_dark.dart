@@ -24,12 +24,8 @@ class DarkTheme extends AppThemeData {
         onSurfaceVariant: AppColors.light2,
         onInverseSurface: AppColors.dark4,
       ),
-      cardTheme: base.cardTheme.copyWith(
-          color: AppColors.dark2
-      ),
-      dividerTheme: base.dividerTheme.copyWith(
-          color: AppColors.light2
-      ),
+      cardTheme: base.cardTheme.copyWith(color: AppColors.dark2),
+      dividerTheme: base.dividerTheme.copyWith(color: AppColors.light2),
       iconTheme: IconThemeData(color: AppColors.light2),
       popupMenuTheme: base.popupMenuTheme.copyWith(
         color: AppColors.dark4,

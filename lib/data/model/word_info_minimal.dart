@@ -22,21 +22,20 @@ class MinimalWordInfo implements Model<int> {
     this.rank = 1,
     required this.text,
     required this.otherForms,
-     this.primaryMeaning = '',
+    this.primaryMeaning = '',
     required this.primarySenseId,
-     this.type = '',
+    this.type = '',
     required this.britishPhonetic,
     required this.americanPhonetic,
   });
 
-  factory MinimalWordInfo.fromLine(String line){
+  factory MinimalWordInfo.fromLine(String line) {
     final parts = line.split('|');
     return MinimalWordInfo(
       id: int.parse(parts[0]),
       rank: int.parse(parts[1]),
       text: parts[2],
-      otherForms:
-      parts[3].split(",").toList()..removeWhere((s) => s.isEmpty),
+      otherForms: parts[3].split(",").toList()..removeWhere((s) => s.isEmpty),
       primarySenseId: parts[4],
       type: parts[5] == '1' ? 'word' : 'phrase',
       britishPhonetic: parts[6],
@@ -45,7 +44,6 @@ class MinimalWordInfo implements Model<int> {
   }
 
   static const fromJson = _$MinimalWordInfoFromJson;
-
 
   @override
   JSON toJson() => _$MinimalWordInfoToJson(this);

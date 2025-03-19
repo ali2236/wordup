@@ -1,5 +1,3 @@
-
-
 import '../model/accent.dart';
 
 abstract class AccentRepository {

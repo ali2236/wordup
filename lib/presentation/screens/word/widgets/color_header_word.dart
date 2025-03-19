@@ -7,7 +7,7 @@ class WordHeaderBackdrop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final vm  = context.watch<WordPageViewModel>();
+    final vm = context.watch<WordPageViewModel>();
     return SizedBox(
       height: vm.imageHeight,
       child: Container(color: Theme.of(context).colorScheme.tertiary),

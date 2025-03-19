@@ -1,4 +1,3 @@
-
 abstract class Injector {
   static Injector? _instance;
   static Injector get instance => _instance!;

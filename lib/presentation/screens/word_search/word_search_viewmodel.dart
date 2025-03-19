@@ -11,7 +11,6 @@ class WordSearchViewModel extends ChangeNotifier {
 
   WordSearchViewModel(this._repository);
 
-
   void updateQuery(String newQuery) {
     _query = newQuery;
     _results.clear();
@@ -31,8 +30,7 @@ class WordSearchViewModel extends ChangeNotifier {
 
   String get query => _query;
 
-  Future<List<WordResult>> _findWords(){
+  Future<List<WordResult>> _findWords() {
     return _repository.getAll(StringQueryFilter(_query)).first;
   }
-
 }

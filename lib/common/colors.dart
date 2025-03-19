@@ -47,4 +47,3 @@ class AppColors {
   static const cobalt = Color(0xff6F6EDC);
   static const raspberry = Color(0xffA6255C);
 }
-

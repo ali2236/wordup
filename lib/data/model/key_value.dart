@@ -5,7 +5,7 @@ import 'package:wordup/core/core.dart';
 part 'key_value.g.dart';
 
 @JsonSerializable()
-class KeyValue implements Model<String>{
+class KeyValue implements Model<String> {
   final String key;
   final String value;
 

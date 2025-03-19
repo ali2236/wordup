@@ -5,17 +5,23 @@ import 'button_icon_colored_circle.dart';
 class PlayPauseButton extends StatelessWidget {
   final bool playing;
   final VoidCallback onTap;
-  const PlayPauseButton({super.key, required this.playing, required this.onTap});
+  const PlayPauseButton({
+    super.key,
+    required this.playing,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    if(isDark){
+    if (isDark) {
       return GestureDetector(
         onTap: onTap,
         child: Icon(
-          playing ? Icons.pause_circle_outline_rounded : Icons.play_circle_outline_rounded,
-          size: 32
+          playing
+              ? Icons.pause_circle_outline_rounded
+              : Icons.play_circle_outline_rounded,
+          size: 32,
         ),
       );
     } else {

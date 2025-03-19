@@ -37,14 +37,27 @@ class _SelectableWord extends StatelessWidget {
   final bool selected;
   final VoidCallback? onTap;
 
-  const _SelectableWord({super.key, required this.word, this.onTap, required this.selected});
+  const _SelectableWord({
+    super.key,
+    required this.word,
+    this.onTap,
+    required this.selected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color:
-            selected ? Color.lerp(Theme.of(context).colorScheme.secondary, Colors.black, 0.2) : Theme.of(context).colorScheme.brightness == Brightness.light ? Color(0xffD9DDED) : Color(0xff333333),
+            selected
+                ? Color.lerp(
+                  Theme.of(context).colorScheme.secondary,
+                  Colors.black,
+                  0.2,
+                )
+                : Theme.of(context).colorScheme.brightness == Brightness.light
+                ? Color(0xffD9DDED)
+                : Color(0xff333333),
         borderRadius: BorderRadius.circular(12),
       ),
       child: GestureDetector(
@@ -53,7 +66,11 @@ class _SelectableWord extends StatelessWidget {
           padding: const EdgeInsets.all(12.0),
           child: Text(
             word,
-            style: TextStyle(color: selected ? Theme.of(context).colorScheme.onSecondary : null, fontWeight: FontWeight.w500),
+            style: TextStyle(
+              color:
+                  selected ? Theme.of(context).colorScheme.onSecondary : null,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

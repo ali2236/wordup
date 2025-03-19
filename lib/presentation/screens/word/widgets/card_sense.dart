@@ -101,23 +101,28 @@ class _SenseCardState extends State<SenseCard>
                         ),
                         Row(
                           children: [
-                            if(phonetics != '//') GestureDetector(
-                              onTap:
-                                  () => context.read<AudioProvider>().play(
-                                    widget.word.wordPronunciation,
-                                  ),
-                              child: Image(
-                                image: Svg(Assets.iconsSpeaker),
-                                width: 30,
-                                height: 30,
-                                color: theme.iconTheme.color,
+                            if (phonetics != '//')
+                              GestureDetector(
+                                onTap:
+                                    () => context.read<AudioProvider>().play(
+                                      widget.word.wordPronunciation,
+                                    ),
+                                child: Image(
+                                  image: Svg(Assets.iconsSpeaker),
+                                  width: 30,
+                                  height: 30,
+                                  color: theme.iconTheme.color,
+                                ),
                               ),
-                            ),
                             Text(
                               '${phonetics == '//' ? '' : '$phonetics '}#${widget.word.rank}',
                               style: theme.textTheme.bodyMedium?.copyWith(
                                 fontWeight: FontWeight.w500,
-                                fontFamilyFallback: ['Roboto', 'Arial', 'sans-serif'],
+                                fontFamilyFallback: [
+                                  'Roboto',
+                                  'Arial',
+                                  'sans-serif',
+                                ],
                               ),
                             ),
                           ],

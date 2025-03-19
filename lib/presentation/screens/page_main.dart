@@ -58,16 +58,23 @@ class MainPage extends StatelessWidget {
                   },
                 ),
               ),
-              Expanded(child: WordResultList(
-                onTap: (word) async {
-                  final navigator = Navigator.of(context);
-                  final wordInfo = await locate<WordInfoRepository>().get(word.id).first;
-                  final vm = WordPageViewModel(wordInfo);
-                  navigator.push(MaterialPageRoute(builder: (context){
-                    return WordPage(vm: vm);
-                  }));
-                },
-              )),
+              Expanded(
+                child: WordResultList(
+                  onTap: (word) async {
+                    final navigator = Navigator.of(context);
+                    final wordInfo =
+                        await locate<WordInfoRepository>().get(word.id).first;
+                    final vm = WordPageViewModel(wordInfo);
+                    navigator.push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WordPage(vm: vm);
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           );
         },

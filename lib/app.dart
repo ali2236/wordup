@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = ThemeProvider.watch(context);
     final theme = themeProvider.currentTheme.buildTheme(context);
-    
+
     // Set system UI overlay style based on theme brightness
     SystemChrome.setSystemUIOverlayStyle(
       theme.brightness == Brightness.dark
-          ? SystemUiOverlayStyle.light // Light status bar icons for dark theme
+          ? SystemUiOverlayStyle
+              .light // Light status bar icons for dark theme
           : SystemUiOverlayStyle.dark, // Dark status bar icons for light theme
     );
 

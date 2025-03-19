@@ -7,12 +7,11 @@ class GetThemeUseCase {
 
   GetThemeUseCase(this._repository);
 
-  List<AppThemeData> getThemes(){
+  List<AppThemeData> getThemes() {
     return _repository.getThemes();
   }
 
-  AppThemeData call(){
+  AppThemeData call() {
     return _repository.getTheme();
   }
-
 }

@@ -46,11 +46,18 @@ class SembastDataSource<M extends Model, ID, F> extends DataSource<M, ID, F> {
 
   @override
   Stream<List<M>> getAll(F? filter) {
-    return _ref.query().onSnapshots(db).map<List<M>>(
-            (List<RecordSnapshot<dynamic, JSON>> records) => records
-            .map<M>((RecordSnapshot<dynamic, JSON> snapshot) =>
-            fromJson(snapshot.value))
-            .toList());
+    return _ref
+        .query()
+        .onSnapshots(db)
+        .map<List<M>>(
+          (List<RecordSnapshot<dynamic, JSON>> records) =>
+              records
+                  .map<M>(
+                    (RecordSnapshot<dynamic, JSON> snapshot) =>
+                        fromJson(snapshot.value),
+                  )
+                  .toList(),
+        );
   }
 
   @override
@@ -59,10 +66,7 @@ class SembastDataSource<M extends Model, ID, F> extends DataSource<M, ID, F> {
   }
 
   JSON _toJson(M model) {
-    return {
-      '_id': model.id,
-      ...model.toJson(),
-    };
+    return {'_id': model.id, ...model.toJson()};
   }
 
   Finder _find(ID id) {

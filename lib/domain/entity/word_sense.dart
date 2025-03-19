@@ -26,7 +26,7 @@ class WordSense {
 
   static const fromJson = _$WordSenseFromJson;
 
-  Uri get image =>  imageCDN.resolve('/senses/$id.webp?v=1');
+  Uri get image => imageCDN.resolve('/senses/$id.webp?v=1');
 
   Uri get video => imageCDN.resolve('/video/$id.mp4');
 

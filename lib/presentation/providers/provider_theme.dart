@@ -7,7 +7,7 @@ class ThemeProvider extends ChangeNotifier {
   final ThemeRepository _repository;
   late AppThemeData _currentTheme;
 
-  ThemeProvider(this._repository){
+  ThemeProvider(this._repository) {
     _currentTheme = _repository.getTheme();
   }
 
@@ -20,7 +20,9 @@ class ThemeProvider extends ChangeNotifier {
   }
 
   void toggleTheme() {
-    setTheme(_repository.getThemes().firstWhere((t) => t.id != currentTheme.id));
+    setTheme(
+      _repository.getThemes().firstWhere((t) => t.id != currentTheme.id),
+    );
   }
 
   static ThemeProvider of(BuildContext context) {
@@ -30,4 +32,4 @@ class ThemeProvider extends ChangeNotifier {
   static ThemeProvider watch(BuildContext context) {
     return Provider.of<ThemeProvider>(context);
   }
-} 
+}

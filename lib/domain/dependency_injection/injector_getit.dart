@@ -5,8 +5,7 @@ abstract class GetItInjector implements Injector {
   final container = GetIt.asNewInstance();
 
   @override
-  T get<T extends Object>(){
+  T get<T extends Object>() {
     return container.get<T>();
   }
-
 }

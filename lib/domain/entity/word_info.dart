@@ -1,9 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:wordup/common/types.dart';
 import 'package:wordup/common/uris.dart';
-import 'package:wordup/domain/domain.dart';
 import 'package:wordup/domain/entity/word_comparison.dart';
 import '../../core/core.dart';
+import '../feature/accent/model/accent.dart';
+import '../feature/accent/repository/repository_accent.dart';
+import 'word_sense.dart';
 
 part 'word_info.g.dart';
 
@@ -18,7 +20,6 @@ class WordInfo extends Model<int> {
   final String britishPhonetics, americanPhonetics;
   final int rank;
   final List<WordComparison> compare;
-
 
   WordInfo({
     required this.id,
@@ -44,7 +45,7 @@ class WordInfo extends Model<int> {
   }
 
   String getPhonetics(Accent accent) {
-    return switch(accent){
+    return switch (accent) {
       Accent.british => britishPhonetics,
       Accent.american => americanPhonetics,
     };

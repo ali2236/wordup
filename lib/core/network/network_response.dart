@@ -8,7 +8,12 @@ class NetworkResponse {
 
   String get body => decodeBody();
 
-  NetworkResponse({required this.statusCode, required this.bodyBytes, required this.headers, required this.decodeBody});
+  NetworkResponse({
+    required this.statusCode,
+    required this.bodyBytes,
+    required this.headers,
+    required this.decodeBody,
+  });
 
   bool get successful => statusCode >= 200 && statusCode < 300;
 }

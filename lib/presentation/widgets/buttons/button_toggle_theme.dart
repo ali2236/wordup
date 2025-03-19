@@ -11,8 +11,8 @@ class ToggleThemeButton extends StatelessWidget {
     final provider = ThemeProvider.watch(context);
     final isDark = provider.currentTheme.id == 'dark';
 
-    void setTheme(AppThemeData theme){
-      if(provider.currentTheme != theme){
+    void setTheme(AppThemeData theme) {
+      if (provider.currentTheme != theme) {
         provider.setTheme(theme);
       }
     }
@@ -32,9 +32,9 @@ class ToggleThemeButton extends StatelessWidget {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
-            left: isDark ? 0 : width/2,
+            left: isDark ? 0 : width / 2,
             child: Container(
-              width: width/2,
+              width: width / 2,
               height: height,
               decoration: BoxDecoration(
                 color: isDark ? Color(0xffbe4ff7) : theme.colorScheme.secondary,

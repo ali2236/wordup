@@ -18,10 +18,7 @@ class WordPopupMenuButton extends StatelessWidget {
         showPopUp<void>(
           context: context,
           barrierColor: Colors.black54,
-          menuPadding: EdgeInsets.symmetric(
-            horizontal: 0,
-            vertical: 0,
-          ),
+          menuPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
           position: RelativeRect.fromLTRB(
             pos.dx,
             pos.dy,
@@ -39,36 +36,43 @@ class WordPopupMenuButton extends StatelessWidget {
               ),
             ),
             PopupMenuDivider(),
-            PopupMenuItem(child: Row(
-              children: [
-                Icon(Icons.note_alt_outlined, size: 18),
-                SizedBox(width: 8),
-                Text('Add Note'),
-
-              ],
-            )),
-            PopupMenuItem(child: Row(
-              children: [
-                Icon(Icons.star_rounded, size: 18),
-                SizedBox(width: 8),
-                Text('Favorite'),
-              ],
-            )),
-            PopupMenuItem(child: Row(
-              children: [
-                Icon(Icons.bookmark_rounded, size: 18),
-                SizedBox(width: 8),
-                Text('Add to list'),
-              ],
-            )),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  Icon(Icons.note_alt_outlined, size: 18),
+                  SizedBox(width: 8),
+                  Text('Add Note'),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  Icon(Icons.star_rounded, size: 18),
+                  SizedBox(width: 8),
+                  Text('Favorite'),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  Icon(Icons.bookmark_rounded, size: 18),
+                  SizedBox(width: 8),
+                  Text('Add to list'),
+                ],
+              ),
+            ),
             PopupMenuDivider(),
-            PopupMenuItem(child: Row(
-              children: [
-                Icon(Icons.flag_rounded, size: 18),
-                SizedBox(width: 8),
-                Text('Report Image'),
-              ],
-            )),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  Icon(Icons.flag_rounded, size: 18),
+                  SizedBox(width: 8),
+                  Text('Report Image'),
+                ],
+              ),
+            ),
           ],
         );
       },

@@ -2,7 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:wordup/core/datasource/data_source.dart';
 import 'package:wordup/core/model/model.dart';
 
-class AssetDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Filter> {
+class AssetDataSource<M extends Model, ID, Filter>
+    extends DataSource<M, ID, Filter> {
   final String assetPath;
 
   AssetDataSource(this.assetPath);
@@ -29,4 +30,4 @@ class AssetDataSource<M extends Model, ID, Filter> extends DataSource<M, ID, Fil
 
   @override
   Stream<List<M>> getAll(Filter? filter) => throw UnimplementedError();
-} 
+}

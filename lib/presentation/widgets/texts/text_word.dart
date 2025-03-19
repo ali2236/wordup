@@ -15,16 +15,23 @@ class WordText extends StatelessWidget {
   });
 
   TextSpan buildSpan() {
-    final words = text.split(' ').expand((word) {
-      if (word.contains('\r\n')) {
-        final parts = word.split('\r\n');
-        return [...parts.take(parts.length - 1).expand((p) => [p, '\r\n']), parts.last];
-      } else if (word.contains('\n')) {
-        final parts = word.split('\n'); 
-        return [...parts.take(parts.length - 1).expand((p) => [p, '\n']), parts.last];
-      }
-      return [word];
-    }).toList();
+    final words =
+        text.split(' ').expand((word) {
+          if (word.contains('\r\n')) {
+            final parts = word.split('\r\n');
+            return [
+              ...parts.take(parts.length - 1).expand((p) => [p, '\r\n']),
+              parts.last,
+            ];
+          } else if (word.contains('\n')) {
+            final parts = word.split('\n');
+            return [
+              ...parts.take(parts.length - 1).expand((p) => [p, '\n']),
+              parts.last,
+            ];
+          }
+          return [word];
+        }).toList();
     return TextSpan(
       children:
           words.indexed.map((wordIndex) {
